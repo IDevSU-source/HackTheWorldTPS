@@ -1,46 +1,49 @@
 # PART 1: THE DIAGNOSTIC (System Analysis)
 
-## *System Focus: Deconstructing the Physics Engine and identifying the Virus.*
+**System Focus:** Deconstructing the Physics Engine and identifying the malware.
+**Addressing Axioms:** Axiom 1 (System Latency) & Axiom 2 (The Resource Hog).
 
-## *Addressing Axioms: System Latency & The Resource Hog.*
+---
 
-***
+### Welcome to the machine room.
 
-Welcome to the machine room.
-
-Before we can start rewriting code or patching glitches, we have to understand what we are dealing with. You cannot hack a system you do not understand. If you try to gain root access without knowing the architecture, you will just crash the server.
+Before we start rewriting code or patching glitches, we have to understand what we are dealing with. You cannot hack a system you do not understand. If you try to gain Root Access without knowing the architecture, you will just crash the server.
 
 Most people live entirely in the User Interface. They stare at the screen. They click the pretty icons. They get angry when the spinning wheel of death appears. They blame the internet connection or the hardware. They never think to open the terminal and look at the running processes.
 
 In Part 1, we are popping the hood. We are going to ignore the shiny graphics and look directly at the raw code scrolling past. We need to run a full system diagnostic.
 
-This section is your Installation Wizard. We are going to deconstruct the "Physics Engine" that generates your reality. We will look at how your sensors (your eyes, ears, and mind) take in raw data. Then we will see how the "Render Engine" takes that messy data and stitches it into a convincing 3D movie called *My Life*.
+This section is your Installation Wizard. We are going to deconstruct the **Physics Engine** that generates your reality. We will look at how your sensors (eyes, ears, and mind) take in raw data. Then we will see how the **Render Engine** takes that messy data and stitches it into a convincing 3D movie called *My Life*.
 
-Finally, we are going to hunt down the virus.
 
-There is a specific process running in the background. It is a resource hog. It lags the system. It overheats the CPU. It creates a feedback loop that feels like stress, anxiety, and suffering. You call this process "Me."
 
-We call it the Self Loop. And it is time to terminate the process.
+### The Malware Hunt
 
-Grab your flashlight. We are going in.
+Finally, we are going to hunt down the bug.
+
+There is a specific process running in the background. It is **The Resource Hog** (*Tanha*). This is a bidirectional infinite loop of resistance that lags the system and overheats the CPU.
+
+This process is executed by **The Self Rootkit** (*Moha*). This is the kernel-level exploit you call "Me." It is time to terminate the process.
+
+---
 
 ### System Roadmap: The Installation Wizard
 
-This is your map of the territory. It guides you through the theory (The Chapters) and forces you to stop and verify your progress at specific markers (The Checkpoints). You cannot proceed to the next level until you pass the test.
+This is your map of the territory. It guides you through the theory chapters. It also forces you to stop and verify your progress at specific markers. You cannot proceed to the next level until you pass the test.
 
-### Chapter 1: The Physics Engine
-We look at the hardware specs. We break experience down into pixels (Voxels) and refresh rates.
+**CHAPTER 1: THE PHYSICS ENGINE**
+We look at the hardware specs of your **Avatar (Bio-Chassis)**. We break experience down into 3D pixels called **Voxels** and analyze refresh rates.
 
-#### 📍CHECKPOINT 1: Stream Analysis
+**📍 CHECKPOINT 1: STREAM ANALYSIS**
 You will verify you can see the raw data stream.
 
-### Chapter 2: The Render Engine
+**CHAPTER 2: THE RENDER ENGINE**
 We analyze how the system lies to you. We separate the raw input from the "concept" overlay.
 
-#### 📍CHECKPOINT 2: Spotting the Lag
+**📍 CHECKPOINT 2: SPOTTING LAG**
 You will test your ability to spot the lag between reality and your thoughts.
 
-### Chapter 3: The Virus
-We isolate the "Self" malware and watch how it infects the data stream with an infinite loop.
+**CHAPTER 3: THE SELF ROOTKIT**
+We isolate the "Self" malware. We watch how it infects the data stream with an infinite loop.
 
 Let’s run the scan.
