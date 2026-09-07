@@ -3,6 +3,10 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     namespace = "com.idevsu.mythos"
     compileSdk = 36
     defaultConfig {
@@ -26,6 +30,11 @@ tasks.register("prepareMythosCorpus") {
     }
 }
 tasks.named("preBuild").configure { dependsOn("prepareMythosCorpus") }
+
+kotlin {
+    jvmToolchain(17)
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.17.0")
     implementation("androidx.appcompat:appcompat:1.7.1")
