@@ -1,0 +1,59 @@
+name: Sync C4Chaos TPS Upstream
+
+on:
+  push:
+    branches:
+      - sync/c4chaos-upstream
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout destination repository
+        uses: actions/checkout@v4
+        with:
+          ref: sync/c4chaos-upstream
+          fetch-depth: 0
+
+      - name: Preserve sync workflow
+        run: cp .github/workflows/sync-c4chaos-upstream.yml /tmp/sync-c4chaos-upstream.yml
+
+      - name: Fetch and merge C4Chaos upstream
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add c4chaos https://github.com/c4chaos-io/trillions-per-second.git
+          git fetch c4chaos main
+          git merge c4chaos/main --allow-unrelated-histories -X theirs --no-edit || {
+            git add -A
+            git -c core.editor=true commit --no-edit || true
+          }
+
+      - name: Preserve destination Android/app additions
+        run: |
+          mkdir -p .github/workflows
+          cp /tmp/sync-c4chaos-upstream.yml .github/workflows/sync-c4chaos-upstream.yml
+
+      - name: Record upstream provenance
+        run: |
+          cat > UPSTREAM_C4CHAOS.md <<'EOF'
+          # TPS Upstream Synchronization
+
+          This repository incorporates the upstream TPS material from:
+
+          https://github.com/c4chaos-io/trillions-per-second
+
+          Upstream identity: c4chaos-io/trillions-per-second
+          Upstream branch: main
+
+          The upstream repository is the original TPS source tree. This file records provenance for the synchronized material.
+          EOF
+          git add -A
+          git diff --cached --quiet || git commit -m "Sync TPS material from c4chaos-io/trillions-per-second"
+
+      - name: Push synchronized branch
+        run: git push origin sync/c4chaos-upstream
