@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-cd "$(dirname "$0")"
-
-if [[ ! -x ./gradlew ]]; then
-  echo "Gradle wrapper executable is missing. Install Gradle once and run: gradle wrapper"
-  exit 1
-fi
-
+cd "$(dirname "$0")/.."
+python3 tools/build_mythos_corpus.py
+cd android
 ./gradlew --no-daemon assembleDebug
-printf '\nAPK ready: %s\n' "app/build/outputs/apk/debug/app-debug.apk"
+echo "APK: android/app/build/outputs/apk/debug/app-debug.apk"
