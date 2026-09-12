@@ -32,6 +32,10 @@ jobs:
         working-directory: android
         run: gradle wrapper --gradle-version 8.13
 
+      - name: Normalize generated Kotlin source
+        working-directory: android
+        run: sed -i 's/return"/return "/g' app/src/main/java/com/idevsu/mythos/MythosUi.kt
+
       - name: Build MythOS APK
         working-directory: android
         run: ./gradlew --no-daemon assembleDebug
